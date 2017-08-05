@@ -1,11 +1,19 @@
 module Cont_Rre(
 	input clk,rst,
-	input div_clk,
+	input div_clk,  //threshold clk
 	input signal_x,
 	output[31:0] fcont_0,
 	output[31:0] fcont_x
 	);
-//========================================================
+/*========================================================
+	Measure the frequence of signal x .
+	fre_clk/fcont_0 = fre_sigX/fcont_x;
+	so,the fre of signal x is:
+	
+	 fre = fre_clk*fcont_x/fcont_0;
+	 
+	 error is around the period of clk.
+*/========================================================
 	//count signal_X
 	reg [31:0] cont_x;
 	always @(posedge signal_x or negedge rst) begin
