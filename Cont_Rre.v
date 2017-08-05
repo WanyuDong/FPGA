@@ -13,7 +13,7 @@ module Cont_Rre(
 	 fre = fre_clk*fcont_x/fcont_0;
 	 
 	 error is around the period of clk.
-*/========================================================
+========================================================*/
 	//count signal_X
 	reg [31:0] cont_x;
 	always @(posedge signal_x or negedge rst) begin
